@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "./../node_modules/flowbite";
+@import 'tailwindcss';
+
+.main-color {
+  color: rgb(251, 192, 45);
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+    color: red;
+    background: blue;
+}

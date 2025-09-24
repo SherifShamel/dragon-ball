@@ -1,0 +1,42 @@
+<section class="bg-[#110E0C]">
+    <div class="container mx-auto justify-items-center">
+        <h2 class="py-3 text-red-600">Red Borders Mean Planet is Destroyed</h2>
+        <div class="flex flex-wrap">
+            @for (planet of allPlanets; track planet.id) {
+            @if(planet.isDestroyed)
+            {
+            <div class="p-3 w-full md:w-1/2 lg:w-1/4">
+                <div class="character bg-gray-600 inner rounded-t-lg border-2 rounded-2xl border-red-600 relative">
+                    <div class="p-3 h-[350px] character-img flex justify-center">
+                        <img class="rounded-t-lg lg:scale-110  duration-500 object-contain cursor-pointer"
+                            [src]="planet.image" [alt]="planet.name"
+                            [routerLink]="['/p_details',planet.id]">
+                    </div>
+                    <hr />
+                    <div class="p-3 bg-[#110E0C]">
+                        <h2 class="text-2xl main-color font-bold">{{planet.name}}</h2>
+                        <h3 class="font-black text-white"><span class="main-color"> Description:
+                            </span>{{planet.description}}</h3>
+                    </div>
+                </div>
+            </div>
+            } @else {
+            <div class="p-3 w-full md:w-1/2 lg:w-1/4">
+                <div class="character bg-gray-600 inner rounded-t-lg border-2 rounded-2xl main-color">
+                    <div class="p-3 h-[350px] character-img flex justify-center">
+                        <img class="rounded-t-lg lg:scale-110  duration-500 object-contain cursor-pointer"
+                            [src]="planet.image" [alt]="planet.name">
+                    </div>
+                    <hr />
+                    <div class="p-3 bg-[#110E0C]">
+                        <h2 class="text-2xl main-color font-bold">{{planet.name}}</h2>
+                        <h3 class="font-black text-white"><span class="main-color"> Description:
+                            </span>{{planet.description}}</h3>
+                    </div>
+                </div>
+            </div>
+            }
+            }
+        </div>
+    </div>
+</section>
